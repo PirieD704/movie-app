@@ -1,0 +1,24 @@
+
+@mixin border-radius($radius){
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin circle($radius, $color, $borderColor){
+	border-radius: $radius;
+	background-color: $color;
+	border-color: $borderColor;
+}
+
+@function getColumnWidth($width, $numColumns, $margin){
+	@return($width / $numColumns) - ($margin * 2);
+}
+
+.base-font{
+	font-family: "source-serif-pro",Georgia,"Times New Roman",Times,serif;
+	font-size: 14px;
+	line-height: 16px;
+	color: #ddd;
+}

@@ -1,0 +1,106 @@
+/* line 19, ../compass/sass/components/_misc.scss */
+.base-font, body .container .col {
+  font-family: "source-serif-pro",Georgia,"Times New Roman",Times,serif;
+  font-size: 14px;
+  line-height: 16px;
+  color: #ddd;
+}
+
+/* line 6, ../compass/sass/layout/_header.scss */
+#header {
+  width: 100%;
+  position: fixed;
+  background-color: red;
+  height: 30px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 12, ../compass/sass/layout/_header.scss */
+#header .circle {
+  border-radius: 20px;
+  background-color: #ff00ff;
+  border-color: #0000ff;
+  height: 30px;
+  width: 30px;
+}
+
+/* line 5, ../compass/sass/layout/_footer.scss */
+#footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  height: 30px;
+  background-color: blue;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+}
+
+/* line 6, ../compass/sass/styles.scss */
+body {
+  width: 100%;
+  margin: 0px;
+  background-color: #ccffcc;
+}
+
+/* line 14, ../compass/sass/styles.scss */
+body .header {
+  font-size: 60px;
+  font-family: Helvetica;
+}
+/* line 18, ../compass/sass/styles.scss */
+body .container {
+  text-align: center;
+  margin: auto;
+  width: 1260px;
+  overflow: hidden;
+}
+/* line 23, ../compass/sass/styles.scss */
+body .container.after-header {
+  margin-top: 20px;
+}
+/* line 26, ../compass/sass/styles.scss */
+body .container .search-wrapper {
+  margin-top: 100px;
+  text-align: center;
+  margin-bottom: 100px;
+}
+/* line 30, ../compass/sass/styles.scss */
+body .container .search-wrapper .button {
+  background-color: blue;
+  color: white;
+  border-radius: 4px;
+  padding: none;
+  border-color: blue;
+}
+/* line 39, ../compass/sass/styles.scss */
+body .container .row {
+  overflow: hidden;
+}
+/* line 43, ../compass/sass/styles.scss */
+body .container .col {
+  width: 285px;
+  margin: auto 15px;
+  float: left;
+  color: #000;
+  text-align: center;
+  margin-top: 35px;
+}
+/* line 51, ../compass/sass/styles.scss */
+body .container .col span {
+  display: block;
+  text-align: center;
+}
+/* line 55, ../compass/sass/styles.scss */
+body .container .col img {
+  transition: all 0.5s ease;
+  width: 250px;
+}
+/* line 59, ../compass/sass/styles.scss */
+body .container .col img:hover {
+  width: 300px;
+  margin-left: -15px;
+}

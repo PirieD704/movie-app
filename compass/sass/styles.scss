@@ -1,0 +1,65 @@
+@import 'configs/variables';
+@import 'components/misc';
+@import 'layout/header';
+@import 'layout/footer';
+
+body{
+	width: 100%;
+	margin: 0px;
+	background-color: $mainBgColor;
+
+}
+
+body{
+	.header{
+		font-size: 60px;
+		font-family: Helvetica;
+	}
+	.container{
+		text-align: center;
+		margin: auto;
+		width: $width;
+		overflow: hidden;
+		&.after-header{
+			margin-top: 20px;
+		}
+		.search-wrapper{
+			margin-top: 100px;
+			text-align: center;
+			margin-bottom: 100px;
+			.button{
+				background-color: blue;
+				color: white;
+				border-radius: 4px;
+				padding: none;
+				border-color: blue;
+			}
+
+		}
+		.row{
+			overflow: hidden;
+		
+		}
+		.col{
+			width: getColumnWidth($width, $numColumns, $margin);
+			margin: auto $margin;
+			float: left;
+			@extend .base-font;
+			color: #000;
+			text-align: center;
+			margin-top: 35px;
+			span{
+				display: block;
+				text-align: center;
+			}
+			img{
+				transition: all 0.5s ease;
+				width: 250px;
+			}
+			img:hover{
+				width: 300px;
+				margin-left: -15px;
+			}
+		}
+	}
+}
