@@ -10,15 +10,19 @@ $(document).ready(function(){
 	var keywordSearch = '/search/keyword';
 	var multiSearch = '/search/multi';
 	var movieSearch = apiBaseUrl + 'search/movie' + apiKey;
-	console.log(movieSearch);
+
 
 	$.getJSON(npUrl, function(nowPlayingData){
 		console.log(nowPlayingData);
 		var npHTML = '';
 		var postersPerRow = 4;
 		var posterCounter = 0;
+		var movieId = apiBaseUrl + 'movie/' + nowPlayingData.results[0].id + apiKey;
+		console.log(movieId);
+
 
 		for(var i = 0; i < nowPlayingData.results.length; i++){
+
 			if(posterCounter == 0){
 				npHTML += '<div class="row">';
 			}
@@ -29,7 +33,6 @@ $(document).ready(function(){
 				npHTML += '<span>' + nowPlayingData.results[i].title + '</span>';
 				var posterUrl = imageBaseUrl + 'w300' + nowPlayingData.results[i].poster_path;
 				npHTML += '<img src="' + posterUrl + '">';
-
 			npHTML += '</div>';
 			if(posterCounter == nowPlayingData.results.length){
 				npHTML += '</div>';
@@ -37,11 +40,23 @@ $(document).ready(function(){
 			posterCounter++;
 		}
 		$('.poster-grid').html(npHTML);
+		$.getJSON(movieId, function(movieData){
+			console.log(movieData);
+			var featureHTML = '';
+			featureHTML += '<div class="back-drop">';
+				var backDropUrl = imageBaseUrl + 'w600' + movieData.backdrop_path;
+				console.log(backDropUrl);
+				featureHTML += '<img src="' + backDropUrl +'">';
+			featureHTML += '</div>';
+			$('.feature-film').html(featureHTML);
+		})
 	})
+
+
 
 	$('.search-form').submit(function(){
 		event.preventDefault();
-		var userInput = $('#user-input').val();
+		var userInput = $('.user-input').val();
 		var search = movieSearch + "&query=" + userInput;
 
 		$.getJSON(search, function(searchMovieData){
@@ -49,6 +64,7 @@ $(document).ready(function(){
 			var searchHTML = '';
 			var postersPerRow = 4;
 			var posterCounter = 0;
+			var movieId = apiBaseUrl + 'movie/' + searchMovieData.results[0].id + apiKey;
 			for(var i = 0; i < searchMovieData.results.length; i++){
 				if(posterCounter == 0){
 					searchHTML += '<div class="row">';
@@ -68,10 +84,57 @@ $(document).ready(function(){
 				posterCounter++;
 			}
 			$('.poster-grid').html(searchHTML);
+
+			$.getJSON(movieId, function(movieData){
+			console.log(movieData);
+			var featureHTML = '';
+			featureHTML += '<div class="back-drop">';
+				var backDropUrl = imageBaseUrl + 'w600' + movieData.backdrop_path;
+				console.log(backDropUrl);
+				featureHTML += '<img src="' + backDropUrl +'">';
+			featureHTML += '</div>';
+			$('.feature-film').html(featureHTML);
+		})
 		})	
 
 	});
 
 });
+
+
+$('.poster-grid img').click(function(){
+	// $(this).
+
+})
+
+
+
+function userChoice(){
+
+
+var movieId = apiBaseUrl + 'movie/' + searchMovieData.results[0].id + apiKey;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
