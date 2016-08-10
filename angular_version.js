@@ -23,7 +23,7 @@ movieApp.controller('movieAppController', function($scope, $http, $mdDialog){
 		function successFunction(movieData){
 			$scope.movieArray = movieData.data.results;
 		},function failureFunction(movieData){
-			console.log(movieData);
+		console.log(movieData);
 	});
 
 	$scope.getNewMovieStuff = function(){
@@ -40,5 +40,24 @@ movieApp.controller('movieAppController', function($scope, $http, $mdDialog){
 
 
 	}
+
+	$scope.status = '  ';
+  	$scope.customFullscreen = false;
+  	$scope.showAlert = function(ev) {
+	    // Appending dialog to document.body to cover sidenav in docs app
+	    // Modal dialogs should fully cover application
+	    // to prevent interaction outside of dialog
+	    $mdDialog.show(
+	      	$mdDialog.alert()
+	        .parent(angular.element(document.querySelector('#popupContainer')))
+	    	.clickOutsideToClose(true)
+	    	.title("stuff about movies")
+	    	.textContent('You can specify some description text in here.')
+	    	.ariaLabel('Alert Dialog Demo')
+	        .ok('Got it!')
+	        .targetEvent(ev)
+	    );
+	};
+
 
 })
