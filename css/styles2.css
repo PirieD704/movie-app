@@ -7,3 +7,16 @@
 	height: 26px;
 	overflow: hidden;
 }
+.dia-title{
+	padding: 20px 20px 0px 20px;
+	font-weight: bold;
+	font-size: 32px;
+}
+.dia-rating{
+	padding: 20px 20px 0px 20px;
+	font-size: 18px;
+}
+.dia-overview{
+	padding: 20px 20px 0px 20px;
+	font-size: 18px;
+}

@@ -12,10 +12,6 @@ movieApp.controller('movieAppController', function($scope, $http, $mdDialog){
 	var multiSearch = apiBaseUrl + '/search/multi' + apiKey;
 	var movieSearch = apiBaseUrl + 'search/movie' + apiKey;
 
-
-
-
-
 	$http({
 		method: 'GET',
 		url: npUrl
@@ -45,21 +41,22 @@ movieApp.controller('movieAppController', function($scope, $http, $mdDialog){
 
 	$scope.status = '  ';
   	$scope.customFullscreen = false;
-  	$scope.showAlert = function(ev) {
+  	$scope.showAlert = function(ev, movie) {
 	    // Appending dialog to document.body to cover sidenav in docs app
 	    // Modal dialogs should fully cover application
 	    // to prevent interaction outside of dialog
+		var dialogHtml = "<div class='dia-title'>"+movie.title+"</div><div class='dia-rating'>Rating: "+movie.vote_average+"</div><div class='dia-overview'>"+movie.overview+"</div><div class='dia-button'><md-button ng-click='closeDialog()' class='md-primary'>Got It!</md-button></div>"
 	    console.log(ev)
-	    $mdDialog.show(
-	      	$mdDialog.alert()
-	        .parent(angular.element(document.querySelector('#popupContainer')))
-	    	.clickOutsideToClose(true)
-	    	.title('text')
-	    	.textContent('more text')
-	    	.ariaLabel('Alert Dialog Demo')
-	        .ok('Got it!')
-	        .targetEvent(ev)
-	    );
+	    $mdDialog.show({
+	    	clickOutsideToClose: true,
+	    	targetEvent: ev,
+	    	template: dialogHtml,
+	    	controller: function DialogController($scope, $mdDialog) {
+            	$scope.closeDialog = function() {
+             		$mdDialog.hide();
+            	}
+            }
+	    });
 	};
 
 
