@@ -1,0 +1,9 @@
+.movie-poster img{
+	height: 350px!important;
+}
+
+.md-headline{
+	font-size: 16px;
+	height: 26px;
+	overflow: hidden;
+}

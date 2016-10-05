@@ -21,6 +21,7 @@ movieApp.controller('movieAppController', function($scope, $http, $mdDialog){
 		url: npUrl
 	}).then(
 		function successFunction(movieData){
+			console.log(movieData)
 			$scope.movieArray = movieData.data.results;
 		},function failureFunction(movieData){
 		console.log(movieData);
@@ -33,6 +34,7 @@ movieApp.controller('movieAppController', function($scope, $http, $mdDialog){
 			url: searchUrl
 		}).then(
 			function successFunction(movieData){
+				console.log(movieData)
 				$scope.movieArray = movieData.data.results;
 			},function failureFunction(movieData){
 				console.log(movieData);
@@ -47,12 +49,13 @@ movieApp.controller('movieAppController', function($scope, $http, $mdDialog){
 	    // Appending dialog to document.body to cover sidenav in docs app
 	    // Modal dialogs should fully cover application
 	    // to prevent interaction outside of dialog
+	    console.log(ev)
 	    $mdDialog.show(
 	      	$mdDialog.alert()
 	        .parent(angular.element(document.querySelector('#popupContainer')))
 	    	.clickOutsideToClose(true)
-	    	.title("stuff about movies")
-	    	.textContent('You can specify some description text in here.')
+	    	.title('text')
+	    	.textContent('more text')
 	    	.ariaLabel('Alert Dialog Demo')
 	        .ok('Got it!')
 	        .targetEvent(ev)

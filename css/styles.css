@@ -56,31 +56,31 @@ body .header {
   font-family: Helvetica;
   color: white;
 }
-/* line 22, ../compass/sass/styles.scss */
+/* line 25, ../compass/sass/styles.scss */
 body .container {
   text-align: center;
   margin: auto;
   width: 100%;
   overflow: hidden;
 }
-/* line 27, ../compass/sass/styles.scss */
+/* line 30, ../compass/sass/styles.scss */
 body .container.after-header {
   margin-top: 20px;
 }
-/* line 30, ../compass/sass/styles.scss */
+/* line 33, ../compass/sass/styles.scss */
 body .container .search-wrapper {
   margin-top: 100px;
   text-align: center;
   margin-bottom: 50px;
   padding-bottom: 50px;
 }
-/* line 35, ../compass/sass/styles.scss */
+/* line 38, ../compass/sass/styles.scss */
 body .container .search-wrapper .user-input {
   font-size: 14px;
   height: 26px;
   width: 300px;
 }
-/* line 40, ../compass/sass/styles.scss */
+/* line 43, ../compass/sass/styles.scss */
 body .container .search-wrapper .button {
   background-color: blue;
   color: white;
@@ -89,35 +89,35 @@ body .container .search-wrapper .button {
   border-color: blue;
   height: 29px;
 }
-/* line 50, ../compass/sass/styles.scss */
+/* line 53, ../compass/sass/styles.scss */
 body .container .feature-film {
   padding-bottom: 20px;
 }
-/* line 53, ../compass/sass/styles.scss */
+/* line 56, ../compass/sass/styles.scss */
 body .container .row {
   overflow: hidden;
   margin-left: 0%;
+  display: inline-block;
 }
-/* line 58, ../compass/sass/styles.scss */
+/* line 62, ../compass/sass/styles.scss */
 body .container .col {
-  width: 285px;
-  margin: auto 15px;
-  float: left;
+  width: 255px;
+  margin: auto 30px;
   color: #000;
   text-align: center;
   margin-top: 35px;
 }
-/* line 66, ../compass/sass/styles.scss */
+/* line 70, ../compass/sass/styles.scss */
 body .container .col span {
   display: block;
   text-align: center;
 }
-/* line 70, ../compass/sass/styles.scss */
+/* line 74, ../compass/sass/styles.scss */
 body .container .col img {
   transition: all 0.5s ease;
   width: 250px;
 }
-/* line 74, ../compass/sass/styles.scss */
+/* line 78, ../compass/sass/styles.scss */
 body .container .col img:hover {
   width: 300px;
   margin-left: -15px;

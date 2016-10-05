@@ -1,36 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="movieApp" lang="en">
 <head>
+	<meta charset="UTF-8">
+	<title>Angular movie app</title>
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-	<title>Movie App</title>
-	
-	<link rel="stylesheet" type="text/css" href="css/styles.css">
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-
-<script type="text/javascript" src="JS/scripts.js"></script>
+<link rel="stylesheet" href="css/styles2.css">
 
 </head>
-<body>
+<body ng-controller="movieAppController">
 	
-	<div class="container">
-		<div class="top-wrapper">
-			<div class="header">THE MOVIE APP</div>
-			<div class="search-wrapper">
-				<form class="search-form">
-					<input type="text" class="user-input" placeholder="enter selection">
-					<input class="button" type="submit" value="SUBMIT">
-				</form>
-			</div>
-			<div class="feature-film">
+
+	 <div class="container">
+	 	<div class="col-xs-12 text-center">
+		 	<h1 class="md-display-3">Movie App</h1>
+		 	<div class="col-xs-12">Enter in any movie title(or part of a title) that you want!</div>
+			<form ng-submit="getNewMovieStuff()">
+				<input ng-model="userChoice">
+				<md-button type="submit" class="md-raised md-primary">Button</md-button>
+			</form>
+		</div>
+
+		<md-content class="md-padding" layout-xs="column" layout-wrap layout="row">
+			<div ng-repeat="movie in movieArray" flex-xs flex-gt-xs="25" layout="column">
+				<md-card  class="movie-poster">
+			        <img ng-src="{{imagePath}}{{movie.poster_path}}" class="md-card-image" alt="No image was available">
+			        <md-card-title>
+			          	<md-card-title-text>
+			            	<span class="md-headline">{{movie.title}}</span>
+			          	</md-card-title-text>
+			        </md-card-title>
+			        <md-button class="md-primary md-raised" ng-click="showAlert($event)">More Info</md-button>
+			      </md-card>
 			</div>
 		</div>
 
-		<div class="poster-grid">
-			<!-- jQuery,get us some html -->
-		</div>
 	</div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+
+<script type="text/javascript" src="angular_version.js"></script>
+
 
 </body>
 </html>
