@@ -18,6 +18,43 @@ This is a fairly simple app with a lot of potential for functionality.  Ideas fo
 	var multiSearch = apiBaseUrl + '/search/multi' + apiKey;
 	var movieSearch = apiBaseUrl + 'search/movie' + apiKey;
 ```
-This helps increase the readability of the code and cuts down on overall characters typed when writing out GET requests over and over again (there's only two currently in this app but this is best practice).  
+This helps increase the readability of the code and cuts down on overall characters typed when writing out GET requests over and over again (there's only two currently in this app but this is best practice).
+When the page first populates, the first GET request is run using the npUrl. All the variables for the urls follow the same concatenation structure the apiBaseUrl + /search/(insert what you want to search) + the apiKey. This one finds the now playing data so that the current top twenty movies in the box office will always show up when a user comes to the page.
+```javascript
+	$http({
+		method: 'GET',
+		url: npUrl
+	}).then(
+		function successFunction(movieData){
+			console.log(movieData)
+			$scope.movieArray = movieData.data.results;
+		},function failureFunction(movieData){
+		console.log(movieData);
+	});
+```
+Here we see our get request and our .then method which is our promise.  this handles the either event if we are to get successful response from the api or failed response from the api.  This is important for one: debugging and testing purposes, and two: as promise, it allows the processes on the page to not be halted while waiting for a response(although in this page there's not anything that would be interfered with, it's just good to know this kind of stuff).
+
+A similar function is used for when the user conducts a search for their movie title or part of a title: 
+```javascript
+	$scope.getNewMovieStuff = function(){
+		var searchUrl = movieSearch + '&query=' + $scope.userChoice;
+		$http({
+			method: 'GET',
+			url: searchUrl
+		}).then(
+			function successFunction(movieData){
+				console.log(movieData)
+				$scope.movieArray = movieData.data.results;
+			},function failureFunction(movieData){
+				console.log(movieData);
+		});
+
+
+	}
+```
+here we target what the user entered in the text field using ng-model as attributed used in angular that is placed on the input element in index.html file. Angular's data binding allows us to have access to this via the scope dependancy, one of the main advantages to angular.  Here are url has a query concatenated onto the end of it that includes the user's input.  The get request runs, the promise runs and moviedata (whatever data is returned from the api) is made available to the DOM (browser window) via scope. In this case. specifically the results property of the data that is returns as this helps clean up what we have to target and populate in the HTML.
+
+
+
 
 to be continued...
