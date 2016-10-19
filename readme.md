@@ -1,7 +1,23 @@
 #MOVIE APP IN ANGULARJS
 
-Incorporates use of the movie database api.  This is still a work in progresss but, nonetheless, a good example of practice with a fun api.
+Incorporates use of the movie database api.  This is still a work in progresss but, nonetheless, a good example of practice with a fun api. Current features include being able to search for any movie or title that you want with the app populating the top twenty search results based on the keyword(s) entered. There is the more info feature that allows you to to see a little more info about the movies as well as their ratings.
 
-###Features and Highlights
+Built using:
+* Angular/Javascript
+* HTML/CSS
+* Bootstrap
 
+##Functionality and Processes
+This is a fairly simple app with a lot of potential for functionality.  Ideas for future additions include allowing for the user to search for movies specifically by actor or genre as well as utilizing the individual movie search feature to gather more information about each movie to display in the corresponding modal. I'll start by showing my variable structure.  I realize that my API key is visible but I've been told I trust people too much so I'll just rely on the honor system that you won't misuse it.
+```javascript
+	var apiBaseUrl = 'http://api.themoviedb.org/3/';
+	var imageBaseUrl = 'http://image.tmdb.org/t/p/';
+	var apiKey = '?api_key=fec8b5ab27b292a68294261bb21b04a5';
+	var npUrl = apiBaseUrl + 'movie/now_playing' + apiKey;
+	var keywordSearch = apiBaseUrl + '/search/keyword' + apiKey;
+	var multiSearch = apiBaseUrl + '/search/multi' + apiKey;
+	var movieSearch = apiBaseUrl + 'search/movie' + apiKey;
+```
+This helps increase the readability of the code and cuts down on overall characters typed when writing out GET requests over and over again (there's only two currently in this app but this is best practice).  
 
+to be continued...
