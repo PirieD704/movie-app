@@ -7,6 +7,9 @@ Built using:
 * HTML/CSS
 * Bootstrap
 
+Here is a link to a live version of the project if you would like to try it out: 
+[movie-app](http://davidapirie.com/movie-app/)
+
 ##Functionality and Processes
 This is a fairly simple app with a lot of potential for functionality.  Ideas for future additions include allowing for the user to search for movies specifically by actor or genre as well as utilizing the individual movie search feature to gather more information about each movie to display in the corresponding modal. I'll start by showing my variable structure.  I realize that my API key is visible but I've been told I trust people too much so I'll just rely on the honor system that you won't misuse it.
 ```javascript
